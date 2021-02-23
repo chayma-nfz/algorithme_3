@@ -1,0 +1,49 @@
+FUNCTION DotProduct (v1,v2 : ARRAY_OF INTEGER)  :INTEGER 
+VAR
+   ps: INTEGER :=0 ;
+   k:INTEGER ;
+BEGIN
+
+ IF (v1.length <> v2.length) THEN
+        write ("erreur")
+    ELSE
+    FOR k FROM 0 TO v1.length-1 STEP 1  DO
+    ps := ps +v1[k]*v2[k]
+
+    END_FOR 
+    return ps 
+
+END 
+
+ALGORITHM algorithm_PS
+ var i,j ,n1 ,n2 :INTEGER ;
+       v1 ,v2 : ARRAY_OF INTEGER [20];
+       var ps :INTEGER ;
+BEGIN
+        REPEAT
+    read(n1);
+        UNTIL (n1 <=0 OR n>20 )
+            FOR i FROM 0 TO n1   DO
+                    read (v1[i])
+            END_FOR
+
+        REPEAT
+            read(n2);
+        UNTIL (n2 <=0 OR n>20 )
+    FOR i FROM 0 TO n2   DO
+        read (v2[i])
+    END_FOR
+
+        ps := dotProduct(v1,v2)  
+            IF ps=0 THEN
+        
+           write ("les deux vecteurs sont orthogonaux")
+           ELSE
+           
+           write ("les deux vecteurs  ne sont pas  orthogonaux")
+         END_IF
+       END_FOR
+    END_FOR
+END
+    
+
